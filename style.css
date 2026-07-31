@@ -91,7 +91,6 @@ nav ul li a:hover{
     height: 100%;
 
     object-fit: cover;
-    z-index: -1;
 
     animation: heroZoom 18s ease-in-out infinite alternate;
 }
