@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adunni's Kitchen</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+
+        <h2>Adunni's Kitchen</h2>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#meals">Meals</a></li>
+            <li><a href="#order">Order</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <section class="hero">
+
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="videos/hero.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-content">
+
+            <h1>Adunni's Kitchen</h1>
+
+            <p>Fresh Homemade Meals Delivered To Your Door.</p>
+
+            <button class="order-btn"onclick="orderNow()">Order Now</button>
+
+            <button class="menu-btn"onclick="viewMeals()">View Meals</button>
+
+        </div>
+    
+    </section>
+
+    <p>We cater for all occasions! Good Food. Great Taste. Memorable Experience</p>
+
+    <section id="contact">
+
+<p><strong>📍Location</strong><br>Ilishan-Remo, Ogun State, Nigeria</p>
+
+<p><strong>📞Reservations & Orders</strong><br>07065004863</p>
+
+<p>Premium Quality • Fresh Ingredients • Exceptional Taste</p>
+
+<p><em>Freshly Prepared. Fast Delivery. Great Taste.</em></p>
+
+    </section>
+
+    <h2 id="meals">Featured Meals</h2>
+
+<div class="meal-container">
+
+    <div class="meal-card">
+    <h3>🍛 Main Meals</h3>
+    <p>Rice Dishes • Pasta • Swallows</p>
+</div>
+
+<div class="meal-card">
+    <h3>🍗 BBQ</h3>
+    <p>Chicken • Turkey • Fish</p>
+</div>
+
+<div class="meal-card">
+    <h3>🌯 Shawarma</h3>
+    <p>Classic • Special • Extra Loaded</p>
+</div>
+
+<div class="meal-card">
+    <h3>🥟 Small Chops</h3>
+    <p>Puff Puff • Samosa • Spring Rolls • Gizdodo</p>
+</div>
+
+<div class="meal-card">
+    <h3>🥣 Soups</h3>
+    <p>Egusi • Efo Riro • Ogbono • Edikaikong</p>
+</div>
+
+<div class="meal-card">
+    <h3>🍽️ Platters</h3>
+    <p>Family Packs • Party Trays • Special Orders</p>
+</div>
+
+</div>
+
+<p><strong>Open:</strong>24 Hours</p>
+
+
+
+<section class="order-section">
+
+    <h2 id="order">Place Your Order</h2>
+
+    <form id="order-form"
+onsubmit="placeOrder(event)">
+<label for="name">Name:</label><br>
+<input type="text" id="name" placeholder="Enter your full name"><br><br>
+
+<label for="phone">Phone Number:</label><br>
+<input type="tel" id="phone"
+placeholder="070********"><br><br>
+
+<label for="address">Delivery Address:</label><br>
+<input type="text" id="address" placeholder="Enter your delivery address"><br><br>
+
+<h3>Choose Your Meals</h3>
+
+<details open>
+<summary><h4>🍛 Main Meals</h4></summary> 
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="jollofChicken" onchange="updatePrice()">
+        Jollof Rice with Chicken (₦5,000)
+    </label>
+    <input type="number" id="jollofChickenQty" value="1" min="1" onchange="updatePrice()">
+</div>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="friedChicken" onchange="updatePrice()">
+        Fried Rice with Chicken (₦5,500)
+    </label>
+    <input type="number" id="friedChickenQty" value="1" min="1" onchange="updatePrice()">
+</div>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="jollofTurkey" onchange="updatePrice()">
+        Jollof Rice with Turkey (₦6,000)
+    </label>
+    <input type="number" id="jollofTurkeyQty" value="1" min="1" onchange="updatePrice()">
+</div>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="friedTurkey" onchange="updatePrice()">
+        Fried Rice with Turkey (₦6,000)
+    </label>
+    <input type="number" id="friedTurkeyQty" value="1" min="1" onchange="updatePrice()">
+</div>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="nativeRiceTurkey" onchange="updatePrice()">
+        Native Rice with Turkey & Egg (₦8,500)
+    </label>
+    <input type="number" id="nativeRiceTurkeyQty" value="1" min="1" onchange="updatePrice()">
+</div>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="nativePastaTurkey" onchange="updatePrice()">
+        Native Pasta with Turkey & Egg (₦8,500)
+    </label>
+    <input type="number" id="nativePastaTurkeyQty" value="1" min="1" onchange="updatePrice()">
+</div>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="nativeRiceChicken" onchange="updatePrice()">
+        Native Rice with Chicken & Egg (₦7,500)
+    </label>
+    <input type="number" id="nativeRiceChickenQty" value="1" min="1" onchange="updatePrice()">
+</div>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="nativePastaChicken" onchange="updatePrice()">
+        Native Pasta with Chicken & Egg (₦7,500)
+    </label>
+
+    <input
+        type="number"
+        id="nativePastaChickenQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+</div>
+
+</details>
+
+<details>
+    <summary><h4>🍗 BBQ</h4></summary>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="bbqChicken" onchange="updatePrice()">
+        BBQ Chicken (₦7,000)
+    </label>
+    <input type="number" id="bbqChickenQty" value="1" min="1" onchange="updatePrice()">
+</div>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="bbqTurkey" onchange="updatePrice()">
+        BBQ Turkey (₦8,000)
+    </label>
+    <input type="number" id="bbqTurkeyQty" value="1" min="1" onchange="updatePrice()">
+</div>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="bbqFish" onchange="updatePrice()">
+        BBQ Fish (₦15,000)
+    </label>
+    <input type="number" id="bbqFishQty" value="1" min="1" onchange="updatePrice()">
+</div>
+
+<div class="meal-option">
+    <label>
+        <input type="checkbox" id="fullBbqChicken" onchange="updatePrice()">
+        Full BBQ Chicken (₦25,000)
+    </label>
+    <input type="number" id="fullBbqChickenQty" value="1" min="1" onchange="updatePrice()">
+
+</div>
+
+</details>
+
+<details>
+<summary><h4>🌯 Shawarma</h4></summary>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="shawarmaOne" onchange="updatePrice()">
+        Shawarma (1 Sausage) (₦3,500)
+    </label>
+
+    <input
+        type="number"
+        id="shawarmaOneQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="shawarmaTwo" onchange="updatePrice()">
+        Shawarma (2 Sausages) (₦4,000)
+    </label>
+
+    <input
+        type="number"
+        id="shawarmaTwoQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+</details>
+
+<details>
+<summary><h4>🥟 Small Chops</h4></summary>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="smallChopsCup" onchange="updatePrice()">
+        Small Chops per Cup (₦2,500)
+    </label>
+
+    <input
+        type="number"
+        id="smallChopsCupQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="smallChopsZobo" onchange="updatePrice()">
+        Small Chops with Zobo (₦3,000)
+    </label>
+
+    <input
+        type="number"
+        id="smallChopsZoboQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="chinChin" onchange="updatePrice()">
+        Chin Chin (₦3,000 per Jar)
+    </label>
+
+    <input
+        type="number"
+        id="chinChinQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="plantainChips" onchange="updatePrice()">
+        Plantain Chips (₦2,000 per Jar)
+    </label>
+
+    <input
+        type="number"
+        id="plantainChipsQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+</details>
+
+
+<details>
+<summary><h4>🍽️ Platters</h4></summary>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="platter5" onchange="updatePrice()">
+        Platter for 5 People (₦12,000)
+    </label>
+
+    <input
+        type="number"
+        id="platter5Qty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="platter10" onchange="updatePrice()">
+        Platter for 10 People (₦24,000)
+    </label>
+
+    <input
+        type="number"
+        id="platter10Qty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="stew2L" onchange="updatePrice()">
+        2 Litres of Stew (5 Proteins) (₦20,000)
+    </label>
+
+    <input
+        type="number"
+        id="stew2LQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+</details>
+
+<details>
+<summary><h4>🍲 Soups</h4></summary>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="ogbonoSoup" onchange="updatePrice()">
+        2 Litres of Ogbono Soup (₦25,000)
+    </label>
+
+    <input
+        type="number"
+        id="ogbonoSoupQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="efoRiroSoup" onchange="updatePrice()">
+        2 Litres of Efo Riro (₦25,000)
+    </label>
+
+    <input
+        type="number"
+        id="efoRiroSoupQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="edikaikongSoup" onchange="updatePrice()">
+        2 Litres of Edikaikong Soup (₦30,000)
+    </label>
+
+    <input
+        type="number"
+        id="edikaikongSoupQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="egusiSoup" onchange="updatePrice()">
+        2 Litres of Egusi Soup (₦25,000)
+    </label>
+
+    <input
+        type="number"
+        id="egusiSoupQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="poundedYamMeal" onchange="updatePrice()">
+        Pounded Yam with Soup & Chicken/Beef (₦6,000)
+    </label>
+
+    <input
+        type="number"
+        id="poundedYamMealQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+<div class="meal-option">
+
+    <label>
+        <input type="checkbox" id="amalaMeal" onchange="updatePrice()">
+        Amala, Gbegiri & Ewedu with Assorted (₦5,000)
+    </label>
+
+    <input
+        type="number"
+        id="amalaMealQty"
+        value="1"
+        min="1"
+        onchange="updatePrice()">
+
+</div>
+
+</details>
+
+    </div>
+
+<h3>Choose Extras</h3>
+
+<div class="extra-option">
+    <label>
+        <input type="checkbox" id="extraEgg" onchange="updatePrice()">
+        <span>Extra Egg</span>
+        <strong>+₦500</strong>
+    </label>
+</div>
+
+<div class="extra-option">
+    <label>
+        <input type="checkbox" id="extraPlantain" onchange="updatePrice()">
+        <span>Extra Plantain</span>
+        <strong>+₦500</strong>
+    </label>
+</div>
+
+<div class="extra-option">
+    <label>
+        <input type="checkbox" id="extraSausage" onchange="updatePrice()">
+        <span>Extra Sausage (Shawarma)</span>
+        <strong>+₦500</strong>
+    </label>
+</div>
+
+<div class="extra-option">
+    <label>
+        <input type="checkbox" id="extraBeef" onchange="updatePrice()">
+        <span>Extra Beef (Shawarma)</span>
+        <strong>+₦1,000</strong>
+    </label>
+</div>
+
+<p><strong>Total Price: N<span
+id="totalPrice">0</span></strong></p>
+
+<label for="note">Extra Instruction:</label><br>
+<textarea id="note" rows="5" cols="40"
+placeholder="E.g. No pepper, less salt, pack seperately, deliver before 12AM"></textarea><br><br>
+
+<button type="submit">Place Order</button>
+
+    </form>
+
+    <div id="orderMessage"></div>
+
+</section>
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        <h2>Adunni's Kitchen</h2>
+        <p>
+            Premium Homemade Cuisine
+            <br>
+            Crafted for Every Occasion
+        </p>
+    </div>
+
+    <div class="footer-hours">
+        <h3>Business Hours</h3>
+        <p>Monday - Sunday</p>
+        <p>24 Hours</p>
+    </div>
+
+    <div class="footer-social">
+        <h3>Connect With Us</h3>
+        <p>Official social media pages coming soon.</p>
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+        © 2026 Adunni's Kitchen. All Rights Reserved.
+    </p>
+
+    <p class="made-by">
+        Website Designed & Developed by
+        <a href="#">Oribamise Alexander</a>
+    </p>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
